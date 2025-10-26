@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - OKpe's E-store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='checkout.css'>
+</head>
+<body>
+    <!-- Cart Success Notification -->
+    <div id="cart-success">
+        <p>Added to cart ✅</p>
+    </div>
+    
+    <!-- Header -->
+    <section id="header">
+        <a href="index.html" class="logo">OKpe's E-store</a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="index.html">About</a></li>
+                <li id="login"><a href="login.html">Login</a></li>
+                <li id="ig-bag"><a href="login.html"><i class="fa-solid fa-user-tie"></i></a></li>
+                <li id="ig-bag"><a href="cart.html" ><i class="fa-solid fa-cart-shopping"></i><span id="cart-counter">0</span></a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i><span id="mobile-cart-counter">0</span></a>
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+    <!-- Checkout Page Header -->
+    <section id="page-header" class="section-p1">
+        <h2>#checkout</h2>
+        <p>Complete your order securely</p>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="section-p1">
+        <div class="checkout-container">
+            <!-- Checkout Form -->
+            <div class="checkout-form">
+                <h3>Billing Details</h3>
+                <form id="checkout-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Street Address *</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State *</label>
+                            <input type="text" id="state" name="state" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="US">United States</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="IT">Italy</option>
+                            <option value="ES">Spain</option>
+                            <option value="BR">Brazil</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="shippingSame" name="shippingSame">
+                        <label for="shippingSame">Ship to a different address?</label>
+                    </div>
+                    
+                    <div id="shipping-details" class="shipping-details" style="display: none;">
+                        <h4>Shipping Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="shippingFirstName">First Name *</label>
+                                <input type="text" id="shippingFirstName" name="shippingFirstName">
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingLastName">Last Name *</label>
+                                <input type="text" id="shippingLastName" name="shippingLastName">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="shippingAddress">Street Address *</label>
+                            <input type="text" id="shippingAddress" name="shippingAddress">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="shippingCity">City *</label>
+                                <input type="text" id="shippingCity" name="shippingCity">
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingState">State *</label>
+                                <input type="text" id="shippingState" name="shippingState">
+                            </div>
+                            <div class="form-group">
+                                <label for="shippingZipCode">ZIP Code *</label>
+                                <input type="text" id="shippingZipCode" name="shippingZipCode">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>Payment Method</h3>
+                    <div class="payment-methods">
+                        <div class="payment-option">
+                            <input type="radio" id="card" name="paymentMethod" value="card" checked>
+                            <label for="card">
+                                <i class="fa-solid fa-credit-card"></i>
+                                Credit/Debit Card
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                            <label for="paypal">
+                                <i class="fa-brands fa-paypal"></i>
+                                PayPal
+                            </label>
+                        </div>
+                        <div class="payment-option">
+                            <input type="radio" id="bank" name="paymentMethod" value="bank">
+                            <label for="bank">
+                                <i class="fa-solid fa-university"></i>
+                                Bank Transfer
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div id="card-details" class="card-details">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number *</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456">
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date *</label>
+                                <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV *</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardName">Name on Card *</label>
+                            <input type="text" id="cardName" name="cardName">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#" class="terms-link">Terms and Conditions</a> *</label>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter">
+                        <label for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Your Order</h3>
+                <div id="order-items">
+                    <!-- Order items will be dynamically inserted here -->
+                </div>
+                
+                <div class="order-totals">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="order-subtotal">$0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Shipping:</span>
+                        <span id="order-shipping">Free</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Tax:</span>
+                        <span id="order-tax">$0.00</span>
+                    </div>
+                    <div class="total-row total-final">
+                        <span>Total:</span>
+                        <span id="order-total">$0.00</span>
+                    </div>
+                </div>
+                
+                <button type="submit" form="checkout-form" class="place-order-btn" id="place-order-btn">
+                    <i class="fa-solid fa-lock"></i>
+                    Place Order
+                </button>
+                
+                <div class="security-info">
+                    <i class="fa-solid fa-shield-alt"></i>
+                    <span>Your payment information is secure and encrypted</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Sign Up For Newsletter</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers</span>.</p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 123 Okpe St, Benin City, Nigeria</p>
+            <p><strong>Phone:</strong> +234 8012345678</p>
+            <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+            </div>    
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact Us</a>
+        </div>    
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">sign in</a>
+            <a href="#">view cart</a>
+            <a href="#">my wishlist</a>
+            <a href="#">Track my order</a>
+            <a href="#">help</a>
+        </div>  
+        
+        <div class="copyright">
+            <p>&copy; 2024, Okpe E-store - HTML CSS JS Project</p>
+        </div>
+    </footer>
+
+    <script src='index.js'></script>
+    <script src='checkout.js'></script>
+</body>
+</html>
